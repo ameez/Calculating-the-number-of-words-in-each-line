@@ -1,0 +1,27 @@
+import os
+with open("mydata.txt", mode = "w", encoding="utf-8") as my_file:
+    my_file.write("This is the first line\nNow this is second\nAnd this is the last one\nThe ultimate last line")
+with open("mydata.txt", encoding="utf-8") as my_file:
+    print(my_file.read())
+word_list = []
+with open("mydata.txt", encoding="utf-8") as my_file:
+    line_num = 1
+    while True:
+        line = my_file.readline()
+        if not line:
+            break
+        word_list.append(line)
+        line_num += 1
+#print(len(word_list))
+line_number = 1
+for word in word_list:
+    word_count = 0
+
+    for j in range(0, len(word)):
+        if word[j] == " ":
+            word_count += 1
+
+
+    print("Line number:", line_number)
+    print("number of words:", word_count+1)
+    line_number += 1
